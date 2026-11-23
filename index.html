@@ -3,119 +3,213 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfolio | Web Development Showcase</title>
+  <title>Non | Business Improvement & Web Portfolio</title>
   <!-- Bootstrap 5 CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
+    :root {
+      --primary-color: #1e3a8a; /* 信頼感のあるネイビー */
+      --accent-color: #0284c7;  /* 清潔感のあるブルー */
+      --bg-light: #f8fafc;
+    }
     body {
-      background-color: #0d0e12;
-      color: #e0e0e0;
-      font-family: 'Helvetica Neue', Arial, sans-serif;
+      background-color: var(--bg-light);
+      color: #334155;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      overflow-x: hidden;
     }
-    .text-gold {
-      color: #d4af37;
+    .navbar {
+      background-color: var(--primary-color) !important;
     }
-    .text-silver {
-      color: #c0c0c0;
+    .hero-section {
+      background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
+      color: white;
+      padding: 80px 0 60px 0;
     }
-    .bg-dark-card {
-      background-color: #1a1c23;
-      border: 1px solid #2d313e;
+    .card-custom {
+      border: none;
       border-radius: 12px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+      transition: transform 0.2s;
+    }
+    .card-custom:hover {
+      transform: translateY(-4px);
     }
     .skill-badge {
-      background: #252836;
-      color: #d4af37;
-      border: 1px solid #3a3f54;
+      background-color: #e2e8f0;
+      color: #1e293b;
+      font-weight: 600;
       padding: 6px 14px;
       border-radius: 20px;
       font-size: 0.85rem;
       display: inline-block;
       margin: 4px;
     }
-    .hero-section {
-      padding: 70px 0 50px 0;
-      border-bottom: 1px solid #232734;
+    .skill-badge-highlight {
+      background-color: #dbeafe;
+      color: #1e40af;
+      border: 1px solid #bfdbfe;
+    }
+    /* マウス追従キラキラキャンバス */
+    #sparkle-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-secondary">
+
+  <!-- マウスきらきら演出キャンバス -->
+  <canvas id="sparkle-canvas"></canvas>
+
+  <!-- ナビゲーション -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm">
     <div class="container">
-      <a class="navbar-brand text-gold fw-bold fs-4" href="#">DEV PORTFOLIO</a>
+      <a class="navbar-brand fw-bold" href="#">Non's PORTFOLIO</a>
+      <div class="navbar-nav ms-auto">
+        <a class="nav-link text-white" href="#about">Profile</a>
+        <a class="nav-link text-white" href="#skills">Skills & BPR</a>
+        <a class="nav-link text-white" href="#works">Works</a>
+      </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- ヒーローセクション -->
   <section class="hero-section text-center">
     <div class="container">
-      <h1 class="display-5 fw-bold text-gold mb-3">WEB DEVELOPMENT PORTFOLIO</h1>
-      <p class="lead text-silver max-w-600 mx-auto mb-4">
-        Webアプリケーション開発の基礎からUI/UXデザイン、JavaScriptアルゴリズム実装までを網羅した実績サイト
+      <div class="mb-3">
+        <span style="font-size: 3.5rem;">🐇</span>
+      </div>
+      <h1 class="fw-bold mb-3">BUSINESS IMPROVEMENT & WEB DEVELOPMENT</h1>
+      <p class="lead text-light max-w-600 mx-auto mb-4" style="font-size: 1.1rem;">
+        実務経験で培った業務改善（BPR/DX）思考 × 自動化ツール活用 × フロントエンド技術
       </p>
-      <div class="d-flex justify-content-center flex-wrap gap-1">
-        <span class="skill-badge">HTML5 / CSS3</span>
+      <div>
+        <span class="skill-badge skill-badge-highlight">GAS / Power Automate / RPA</span>
+        <span class="skill-badge skill-badge-highlight">AI活用・自動化</span>
+        <span class="skill-badge">HTML5 / CSS3 / JavaScript</span>
         <span class="skill-badge">Bootstrap 5</span>
-        <span class="skill-badge">JavaScript (ES6+)</span>
-        <span class="skill-badge">DOM Manipulation</span>
-        <span class="skill-badge">GitHub Pages</span>
       </div>
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section class="py-5">
+  <!-- プロフィール・強み -->
+  <section id="about" class="py-5">
     <div class="container">
-      <h2 class="text-gold fw-bold mb-4 text-center">WORKS & PROJECTS</h2>
+      <div class="card card-custom p-4">
+        <h2 class="h4 fw-bold mb-3" style="color: var(--primary-color);">ABOUT / PROFILE</h2>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <p class="mb-2"><strong>ハンドルネーム：</strong> のん（Non）</p>
+            <p class="mb-2"><strong>拠点：</strong> 東京都</p>
+            <p class="mb-0"><strong>キャリア・バックグラウンド：</strong> 大手自動車メーカー、エンタメ総合企業、IT決済領域など、第一線のビジネス現場にてプロジェクト推進・業務プロセス構築に従事。</p>
+          </div>
+          <div class="col-md-6">
+            <p class="mb-2"><strong>強み・ビジョン：</strong> トヨタ仕込みの業務改善・プロセス効率化の考え方をベースに、GASやPower Automate、RPAを活用した自動化を推進。さらに最新のAIエージェントやWebフロントエンド技術を組み合わせ、組織の生産性向上に貢献することを目指す。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 制作実績セクション -->
+  <section id="works" class="py-5 bg-white">
+    <div class="container">
+      <h2 class="h4 fw-bold text-center mb-4" style="color: var(--primary-color);">WORKS & PROJECTS</h2>
       <div class="row g-4">
-        <!-- Project 1 -->
+        <!-- 実績 1：避難所TKB48アラート -->
         <div class="col-md-6">
-          <div class="p-4 bg-dark-card h-100">
-            <h3 class="h5 text-gold fw-bold mb-2">01. いいところ診断機能</h3>
-            <p class="text-silver small mb-3">アルゴリズム構築 & DOM動的制御アプリ</p>
-            <p class="text-secondary mb-3">
-              ユーザー名の文字コード計算と剰余判定アルゴリズムにより、パーソナライズされた結果を動的に表示。console.assertによる自動テストとDOM操作（getElementById / addEventListener）を組み込んだWebアプリ。
-            </p>
-            <span class="badge bg-secondary">JavaScript</span>
-            <span class="badge bg-secondary">DOM操作</span>
-            <span class="badge bg-secondary">アルゴリズム</span>
+          <div class="card card-custom p-4 h-100">
+            <h3 class="h5 fw-bold mb-2">01. 避難所TKB48アラート</h3>
+            <p class="text-muted small mb-2">人工知能活用実践 成果物</p>
+            <p class="small text-secondary mb-3">防災・避難所環境における課題解決を目指し、AI技術およびWebインターフェースを活用して構築したアラートシステム。</p>
+            <div>
+              <span class="badge bg-primary">AI活用実践</span>
+              <span class="badge bg-secondary">防災Webシステム</span>
+            </div>
           </div>
         </div>
-        <!-- Project 2 -->
+        <!-- 実績 2：貴方の言葉になりたい -->
         <div class="col-md-6">
-          <div class="p-4 bg-dark-card h-100">
-            <h3 class="h5 text-gold fw-bold mb-2">02. SNS共有 & ソーシャル連携機能</h3>
-            <p class="text-silver small mb-3">URIエンコーディング & デプロイ最適化</p>
-            <p class="text-secondary mb-3">
-              URIエンコード処理を行ったツイートボタンの動的生成および、OGPタグ設定によるSNS表示最適化を実施。GitHub Pagesを用いたデプロイフローを構築。
-            </p>
-            <span class="badge bg-secondary">Social API</span>
-            <span class="badge bg-secondary">OGP</span>
-            <span class="badge bg-secondary">GitHub Pages</span>
+          <div class="card card-custom p-4 h-100">
+            <h3 class="h5 fw-bold mb-2">02. 貴方の言葉になりたい</h3>
+            <p class="text-muted small mb-2">ビジュアル・グラフィック作品</p>
+            <p class="small text-secondary mb-3">情報伝達と視覚的表現の融合を追求して制作したグラフィック・ビジュアルアート作品。</p>
+            <div>
+              <span class="badge bg-info text-dark">Graphic Design</span>
+              <span class="badge bg-secondary">Visual Arts</span>
+            </div>
+          </div>
+        </div>
+        <!-- 実績 3：ZEN大学 カリキュラム動画 -->
+        <div class="col-12">
+          <div class="card card-custom p-4">
+            <h3 class="h5 fw-bold mb-3">03. ZEN大学 カリキュラム紹介</h3>
+            <div class="ratio ratio-16x9 mx-auto" style="max-width: 750px;">
+              <iframe src="https://www.youtube.com/embed/2wqrYydAiGo" title="ZEN大学 カリキュラム紹介" allowfullscreen></iframe>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Skills & Perspective -->
-  <section class="py-5 bg-black">
+  <!-- フッター -->
+  <footer class="py-4 text-center text-muted border-top">
     <div class="container">
-      <div class="p-4 bg-dark-card">
-        <h3 class="h5 text-gold fw-bold mb-3">DEVELOPMENT QUALITY & PERSPECTIVE</h3>
-        <p class="text-silver mb-0">
-          単なるコード記述にとどまらず、開発初期段階での要件定義・モックアップ作成によるチーム内仕様合意の形成、マルチデバイス対応のレスポンシブ設計（Bootstrap）、ならびに保守性の高いコンポーネント設計を意識した開発プロセスを重視しています。
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="py-4 text-center text-secondary border-top border-secondary">
-    <div class="container">
-      <p class="mb-0 small">&copy; 2024 Web Application Development Portfolio. All Rights Reserved.</p>
+      <p class="mb-0 small">&copy; 2024 Non. All Rights Reserved.</p>
     </div>
   </footer>
+
+  <!-- マウス追従キラキラアニメーション JavaScript -->
+  <script>
+    const canvas = document.getElementById('sparkle-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    window.addEventListener('mousemove', (e) => {
+      for (let i = 0; i < 2; i++) {
+        particles.push({
+          x: e.clientX,
+          y: e.clientY,
+          size: Math.random() * 4 + 2,
+          speedX: (Math.random() - 0.5) * 2,
+          speedY: (Math.random() - 0.5) * 2,
+          color: `hsl(${Math.random() * 60 + 190}, 100%, 70%)`,
+          life: 1
+        });
+      }
+    });
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = particles.length - 1; i >= 0; i--) {
+        let p = particles[i];
+        p.x += p.speedX;
+        p.y += p.speedY;
+        p.life -= 0.02;
+        ctx.fillStyle = p.color;
+        ctx.globalAlpha = Math.max(0, p.life);
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+        if (p.life <= 0) particles.splice(i, 1);
+      }
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
 </body>
 </html>
