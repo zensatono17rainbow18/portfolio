@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Web Development Showcase</title>
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #0d0e12;
+      color: #e0e0e0;
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+    }
+    .text-gold {
+      color: #d4af37;
+    }
+    .text-silver {
+      color: #c0c0c0;
+    }
+    .bg-dark-card {
+      background-color: #1a1c23;
+      border: 1px solid #2d313e;
+      border-radius: 12px;
+    }
+    .skill-badge {
+      background: #252836;
+      color: #d4af37;
+      border: 1px solid #3a3f54;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      display: inline-block;
+      margin: 4px;
+    }
+    .hero-section {
+      padding: 70px 0 50px 0;
+      border-bottom: 1px solid #232734;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-secondary">
+    <div class="container">
+      <a class="navbar-brand text-gold fw-bold fs-4" href="#">DEV PORTFOLIO</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section text-center">
+    <div class="container">
+      <h1 class="display-5 fw-bold text-gold mb-3">WEB DEVELOPMENT PORTFOLIO</h1>
+      <p class="lead text-silver max-w-600 mx-auto mb-4">
+        Webアプリケーション開発の基礎からUI/UXデザイン、JavaScriptアルゴリズム実装までを網羅した実績サイト
+      </p>
+      <div class="d-flex justify-content-center flex-wrap gap-1">
+        <span class="skill-badge">HTML5 / CSS3</span>
+        <span class="skill-badge">Bootstrap 5</span>
+        <span class="skill-badge">JavaScript (ES6+)</span>
+        <span class="skill-badge">DOM Manipulation</span>
+        <span class="skill-badge">GitHub Pages</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-gold fw-bold mb-4 text-center">WORKS & PROJECTS</h2>
+      <div class="row g-4">
+        <!-- Project 1 -->
+        <div class="col-md-6">
+          <div class="p-4 bg-dark-card h-100">
+            <h3 class="h5 text-gold fw-bold mb-2">01. いいところ診断機能</h3>
+            <p class="text-silver small mb-3">アルゴリズム構築 & DOM動的制御アプリ</p>
+            <p class="text-secondary mb-3">
+              ユーザー名の文字コード計算と剰余判定アルゴリズムにより、パーソナライズされた結果を動的に表示。console.assertによる自動テストとDOM操作（getElementById / addEventListener）を組み込んだWebアプリ。
+            </p>
+            <span class="badge bg-secondary">JavaScript</span>
+            <span class="badge bg-secondary">DOM操作</span>
+            <span class="badge bg-secondary">アルゴリズム</span>
+          </div>
+        </div>
+        <!-- Project 2 -->
+        <div class="col-md-6">
+          <div class="p-4 bg-dark-card h-100">
+            <h3 class="h5 text-gold fw-bold mb-2">02. SNS共有 & ソーシャル連携機能</h3>
+            <p class="text-silver small mb-3">URIエンコーディング & デプロイ最適化</p>
+            <p class="text-secondary mb-3">
+              URIエンコード処理を行ったツイートボタンの動的生成および、OGPタグ設定によるSNS表示最適化を実施。GitHub Pagesを用いたデプロイフローを構築。
+            </p>
+            <span class="badge bg-secondary">Social API</span>
+            <span class="badge bg-secondary">OGP</span>
+            <span class="badge bg-secondary">GitHub Pages</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills & Perspective -->
+  <section class="py-5 bg-black">
+    <div class="container">
+      <div class="p-4 bg-dark-card">
+        <h3 class="h5 text-gold fw-bold mb-3">DEVELOPMENT QUALITY & PERSPECTIVE</h3>
+        <p class="text-silver mb-0">
+          単なるコード記述にとどまらず、開発初期段階での要件定義・モックアップ作成によるチーム内仕様合意の形成、マルチデバイス対応のレスポンシブ設計（Bootstrap）、ならびに保守性の高いコンポーネント設計を意識した開発プロセスを重視しています。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-4 text-center text-secondary border-top border-secondary">
+    <div class="container">
+      <p class="mb-0 small">&copy; 2024 Web Application Development Portfolio. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
